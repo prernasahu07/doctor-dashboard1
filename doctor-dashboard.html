@@ -1,0 +1,893 @@
+<!DOCTYPE html> 
+<html lang="en">
+	
+<!-- doccure/doctor-dashboard.html  30 Nov 2019 04:12:03 GMT -->
+<head>
+		<meta charset="utf-8">
+		<title>Doccure</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+		
+		<!-- Favicons -->
+		<link href="assets/img/favicon.png" rel="icon">
+		
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+		
+		<!-- Fontawesome CSS -->
+		<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+		<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+		
+		<!-- Main CSS -->
+		<link rel="stylesheet" href="assets/css/style.css">
+		
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+			<script src="assets/js/html5shiv.min.js"></script>
+			<script src="assets/js/respond.min.js"></script>
+		<![endif]-->
+	
+	</head>
+	<body>
+
+		<!-- Main Wrapper -->
+		<div class="main-wrapper">
+		
+			<!-- Header -->
+			<header class="header">
+				<nav class="navbar navbar-expand-lg header-nav">
+					<div class="navbar-header">
+						<a id="mobile_btn" href="javascript:void(0);">
+							<span class="bar-icon">
+								<span></span>
+								<span></span>
+								<span></span>
+							</span>
+						</a>
+						<a href="index-2.html" class="navbar-brand logo">
+							<img src="data:image/png;base64,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" class="img-fluid" alt="Logo">
+						</a>
+					</div>
+					<div class="main-menu-wrapper">
+						<div class="menu-header">
+							<a href="index-2.html" class="menu-logo">
+								<img src="data:image/png;base64,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" class="img-fluid" alt="Logo">
+							</a>
+							<a id="menu_close" class="menu-close" href="javascript:void(0);">
+								<i class="fas fa-times"></i>
+							</a>
+						</div>
+						<ul class="main-nav">
+							<li>
+								<a href="index-2.html">Home</a>
+							</li>
+							<li class="has-submenu active">
+								<a href="#">Doctors <i class="fas fa-chevron-down"></i></a>
+								<ul class="submenu">
+									<li class="active"><a href="doctor-dashboard.html">Doctor Dashboard</a></li>
+									<li><a href="appointments.html">Appointments</a></li>
+									<li><a href="schedule-timings.html">Schedule Timing</a></li>
+									<li><a href="my-patients.html">Patients List</a></li>
+									<li><a href="patient-profile.html">Patients Profile</a></li>
+									<li><a href="chat-doctor.html">Chat</a></li>
+									<li><a href="invoices.html">Invoices</a></li>
+									<li><a href="doctor-profile-settings.html">Profile Settings</a></li>
+									<li><a href="reviews.html">Reviews</a></li>
+									<li><a href="doctor-register.html">Doctor Register</a></li>
+								</ul>
+							</li>	
+							<li class="has-submenu">
+								<a href="#">Patients <i class="fas fa-chevron-down"></i></a>
+								<ul class="submenu">
+									<li><a href="search.html">Search Doctor</a></li>
+									<li><a href="doctor-profile.html">Doctor Profile</a></li>
+									<li><a href="booking.html">Booking</a></li>
+									<li><a href="checkout.html">Checkout</a></li>
+									<li><a href="booking-success.html">Booking Success</a></li>
+									<li><a href="patient-dashboard.html">Patient Dashboard</a></li>
+									<li><a href="favourites.html">Favourites</a></li>
+									<li><a href="chat.html">Chat</a></li>
+									<li><a href="profile-settings.html">Profile Settings</a></li>
+									<li><a href="change-password.html">Change Password</a></li>
+								</ul>
+							</li>	
+							<li class="has-submenu">
+								<a href="#">Pages <i class="fas fa-chevron-down"></i></a>
+								<ul class="submenu">
+									<li><a href="voice-call.html">Voice Call</a></li>
+									<li><a href="video-call.html">Video Call</a></li>
+									<li><a href="search.html">Search Doctors</a></li>
+									<li><a href="calendar.html">Calendar</a></li>
+									<li><a href="components.html">Components</a></li>
+									<li class="has-submenu">
+										<a href="invoices.html">Invoices</a>
+										<ul class="submenu">
+											<li><a href="invoices.html">Invoices</a></li>
+											<li><a href="invoice-view.html">Invoice View</a></li>
+										</ul>
+									</li>
+									<li><a href="blank-page.html">Starter Page</a></li>
+									<li><a href="login.html">Login</a></li>
+									<li><a href="register.html">Register</a></li>
+									<li><a href="forgot-password.html">Forgot Password</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="admin/index.html" target="_blank">Admin</a>
+							</li>
+							<li class="login-link">
+								<a href="login.html">Login / Signup</a>
+							</li>
+						</ul>	 
+					</div>		 
+					<ul class="nav header-navbar-rht">
+						<li class="nav-item contact-item">
+							<div class="header-contact-img">
+								<i class="far fa-hospital"></i>							
+							</div>
+							<div class="header-contact-detail">
+								<p class="contact-header">Contact</p>
+								<p class="contact-info-header"> +1 315 369 5943</p>
+							</div>
+						</li>
+						
+						<!-- User Menu -->
+						<li class="nav-item dropdown has-arrow logged-item">
+							<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+								<span class="user-img">
+									<img class="rounded-circle" src="https://media.istockphoto.com/id/1007325230/photo/doctor-requesting-silence-in-hospital.jpg?s=612x612&w=is&k=20&c=yhLcd_JKQoXaqV-uiYqtq2oYYzbvI_EstY8qbEPI3Xo=" width="31" alt="Darren Elder">
+								</span>
+							</a>
+							<div class="dropdown-menu dropdown-menu-right">
+								<div class="user-header">
+									<div class="avatar avatar-sm">
+										<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJdELkfWvNHxshVkFd5MEVM48y40cx4cwKuQ&usqp=CAU" alt="User Image" class="avatar-img rounded-circle">
+									</div>
+									<div class="user-text">
+										<h6>Darren Elder</h6>
+										<p class="text-muted mb-0">Doctor</p>
+									</div>
+								</div>
+								<a class="dropdown-item" href="doctor-dashboard.html">Dashboard</a>
+								<a class="dropdown-item" href="doctor-profile-settings.html">Profile Settings</a>
+								<a class="dropdown-item" href="login.html">Logout</a>
+							</div>
+						</li>
+						<!-- /User Menu -->
+						
+					</ul>
+				</nav>
+			</header>
+			<!-- /Header -->
+			
+			<!-- Breadcrumb -->
+			<div class="breadcrumb-bar">
+				<div class="container-fluid">
+					<div class="row align-items-center">
+						<div class="col-md-12 col-12">
+							<nav aria-label="breadcrumb" class="page-breadcrumb">
+								<ol class="breadcrumb">
+									<li class="breadcrumb-item"><a href="index-2.html">Home</a></li>
+									<li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+								</ol>
+							</nav>
+							<h2 class="breadcrumb-title">Dashboard</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /Breadcrumb -->
+			
+			<!-- Page Content -->
+			<div class="content">
+				<div class="container-fluid">
+
+					<div class="row">
+						<div class="col-md-5 col-lg-4 col-xl-3 theiaStickySidebar">
+							
+							<!-- Profile Sidebar -->
+							<div class="profile-sidebar">
+								<div class="widget-profile pro-widget-content">
+									<div class="profile-info-widget">
+										<a href="#" class="booking-doc-img">
+											<img src="https://img.freepik.com/premium-photo/heart-hand-icon-with-happy-doctor-medical-clinic-hospital-happy-health-safety-field-medicine-healthcare-while-love-her-career-job-work-while-ready-help_590464-85323.jpg" alt="User Image">
+										</a>
+										<div class="profile-det-info">
+											<h3>Dr. Darren Elder</h3>
+											
+											<div class="patient-details">
+												<h5 class="mb-0">BDS, MDS - Oral & Maxillofacial Surgery</h5>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="dashboard-widget">
+									<nav class="dashboard-menu">
+										<ul>
+											<li class="active">
+												<a href="doctor-dashboard.html">
+													<i class="fas fa-columns"></i>
+													<span>Dashboard</span>
+												</a>
+											</li>
+											<li>
+												<a href="appointments.html">
+													<i class="fas fa-calendar-check"></i>
+													<span>Appointments</span>
+												</a>
+											</li>
+											<li>
+												<a href="my-patients.html">
+													<i class="fas fa-user-injured"></i>
+													<span>My Patients</span>
+												</a>
+											</li>
+											<li>
+												<a href="schedule-timings.html">
+													<i class="fas fa-hourglass-start"></i>
+													<span>Schedule Timings</span>
+												</a>
+											</li>
+											<li>
+												<a href="invoices.html">
+													<i class="fas fa-file-invoice"></i>
+													<span>Invoices</span>
+												</a>
+											</li>
+											<li>
+												<a href="reviews.html">
+													<i class="fas fa-star"></i>
+													<span>Reviews</span>
+												</a>
+											</li>
+											<li>
+												<a href="chat-doctor.html">
+													<i class="fas fa-comments"></i>
+													<span>Message</span>
+													<small class="unread-msg">23</small>
+												</a>
+											</li>
+											<li>
+												<a href="doctor-profile-settings.html">
+													<i class="fas fa-user-cog"></i>
+													<span>Profile Settings</span>
+												</a>
+											</li>
+											<li>
+												<a href="social-media.html">
+													<i class="fas fa-share-alt"></i>
+													<span>Social Media</span>
+												</a>
+											</li>
+											<li>
+												<a href="doctor-change-password.html">
+													<i class="fas fa-lock"></i>
+													<span>Change Password</span>
+												</a>
+											</li>
+											<li>
+												<a href="index-2.html">
+													<i class="fas fa-sign-out-alt"></i>
+													<span>Logout</span>
+												</a>
+											</li>
+										</ul>
+									</nav>
+								</div>
+							</div>
+							<!-- /Profile Sidebar -->
+							
+						</div>
+						
+						<div class="col-md-7 col-lg-8 col-xl-9">
+
+							<div class="row">
+								<div class="col-md-12">
+									<div class="card dash-card">
+										<div class="card-body">
+											<div class="row">
+												<div class="col-md-12 col-lg-4">
+													<div class="dash-widget dct-border-rht">
+														<div class="circle-bar circle-bar1">
+															<div class="circle-graph1" data-percent="75">
+																<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgrGVy9bHkpBgZAaE8ZPirKvQigzV7wEvUMw&usqp=CAU" class="img-fluid" alt="patient">
+															</div>
+														</div>
+														<div class="dash-widget-info">
+															<h6>Total Patient</h6>
+															<h3>1500</h3>
+															<p class="text-muted">Till Today</p>
+														</div>
+													</div>
+												</div>
+												
+												<div class="col-md-12 col-lg-4">
+													<div class="dash-widget dct-border-rht">
+														<div class="circle-bar circle-bar2">
+															<div class="circle-graph2" data-percent="65">
+																<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfhxv8pz9RjiQ_sBysQK0azuhZw4SdkzDdu61lo3unAcpNfJdFdx23mHes4YLETHoZjOQ&usqp=CAU" class="img-fluid" alt="Patient">
+															</div>
+														</div>
+														<div class="dash-widget-info">
+															<h6>Today Patient</h6>
+															<h3>160</h3>
+															<p class="text-muted">06, Nov 2019</p>
+														</div>
+													</div>
+												</div>
+												
+												<div class="col-md-12 col-lg-4">
+													<div class="dash-widget">
+														<div class="circle-bar circle-bar3">
+															<div class="circle-graph3" data-percent="50">
+																<img src="https://media.istockphoto.com/id/954120492/photo/portrait-of-smiling-young-doctor-showing-business-card.jpg?s=612x612&w=0&k=20&c=a9y0HkUyrgDTq7K9QZ5orIKV2IVHZA1MtJMi_q4IeM0=" class="img-fluid" alt="Patient">
+															</div>
+														</div>
+														<div class="dash-widget-info">
+															<h6>Appoinments</h6>
+															<h3>85</h3>
+															<p class="text-muted">06, Apr 2019</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="row">
+								<div class="col-md-12">
+									<h4 class="mb-4">Patient Appoinment</h4>
+									<div class="appointment-tab">
+									
+										<!-- Appointment Tab -->
+										<ul class="nav nav-tabs nav-tabs-solid nav-tabs-rounded">
+											<li class="nav-item">
+												<a class="nav-link active" href="#upcoming-appointments" data-toggle="tab">Upcoming</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="#today-appointments" data-toggle="tab">Today</a>
+											</li> 
+										</ul>
+										<!-- /Appointment Tab -->
+										
+										<div class="tab-content">
+										
+											<!-- Upcoming Appointment Tab -->
+											<div class="tab-pane show active" id="upcoming-appointments">
+												<div class="card card-table mb-0">
+													<div class="card-body">
+														<div class="table-responsive">
+															<table class="table table-hover table-center mb-0">
+																<thead>
+																	<tr>
+																		<th>Patient Name</th>
+																		<th>Appt Date</th>
+																		<th>Purpose</th>
+																		<th>Type</th>
+																		<th class="text-center">Paid Amount</th>
+																		<th></th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<tr>
+																		<td>
+																			<h2 class="table-avatar">
+																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="https://c8.alamy.com/comp/E9MEB6/a-woman-lying-in-a-hospital-bed-E9MEB6.jpg" alt="User Image"></a>
+																				<a href="patient-profile.html">Richard Wilson <span>#PT0016</span></a>
+																			</h2>
+																		</td>
+																		<td>11 Nov 2019 <span class="d-block text-info">10.00 AM</span></td>
+																		<td>General</td>
+																		<td>New Patient</td>
+																		<td class="text-center">$150</td>
+																		<td class="text-right">
+																			<div class="table-action">
+																				<a href="javascript:void(0);" class="btn btn-sm bg-info-light">
+																					<i class="far fa-eye"></i> View
+																				</a>
+																				
+																				<a href="javascript:void(0);" class="btn btn-sm bg-success-light">
+																					<i class="fas fa-check"></i> Accept
+																				</a>
+																				<a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
+																					<i class="fas fa-times"></i> Cancel
+																				</a>
+																			</div>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>
+																			<h2 class="table-avatar">
+																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="https://images.pexels.com/photos/6129689/pexels-photo-6129689.jpeg?cs=srgb&dl=pexels-rdne-stock-project-6129689.jpg&fm=jpg" alt="User Image"></a>
+																				<a href="patient-profile.html">Charlene Reed <span>#PT0001</span></a>
+																			</h2>
+																		</td>
+																		<td>3 Nov 2019 <span class="d-block text-info">11.00 AM</span></td>
+																		<td>General</td>
+																		<td>Old Patient</td>
+																		<td class="text-center">$200</td>
+																		<td class="text-right">
+																			<div class="table-action">
+																				<a href="javascript:void(0);" class="btn btn-sm bg-info-light">
+																					<i class="far fa-eye"></i> View
+																				</a>
+																				
+																				<a href="javascript:void(0);" class="btn btn-sm bg-success-light">
+																					<i class="fas fa-check"></i> Accept
+																				</a>
+																				<a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
+																					<i class="fas fa-times"></i> Cancel
+																				</a>
+																			</div>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>
+																			<h2 class="table-avatar">
+																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="https://images.unsplash.com/flagged/photo-1578535689084-b804a326a840?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8&w=1000&q=80" alt="User Image"></a>
+																				<a href="patient-profile.html">Travis Trimble  <span>#PT0002</span></a>
+																			</h2>
+																		</td>
+																		<td>1 Nov 2019 <span class="d-block text-info">1.00 PM</span></td>
+																		<td>General</td>
+																		<td>New Patient</td>
+																		<td class="text-center">$75</td>
+																		<td class="text-right">
+																			<div class="table-action">
+																				<a href="javascript:void(0);" class="btn btn-sm bg-info-light">
+																					<i class="far fa-eye"></i> View
+																				</a>
+																				
+																				<a href="javascript:void(0);" class="btn btn-sm bg-success-light">
+																					<i class="fas fa-check"></i> Accept
+																				</a>
+																				<a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
+																					<i class="fas fa-times"></i> Cancel
+																				</a>
+																			</div>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>
+																			<h2 class="table-avatar">
+																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="https://www.westend61.de/images/0001182693pw/caucasian-girl-laying-in-hospital-bed-BLEF00948.jpg" alt="User Image"></a>
+																				<a href="patient-profile.html">Carl Kelly <span>#PT0003</span></a>
+																			</h2>
+																		</td>
+																		<td>30 Oct 2019 <span class="d-block text-info">9.00 AM</span></td>
+																		<td>General</td>
+																		<td>Old Patient</td>
+																		<td class="text-center">$100</td>
+																		<td class="text-right">
+																			<div class="table-action">
+																				<a href="javascript:void(0);" class="btn btn-sm bg-info-light">
+																					<i class="far fa-eye"></i> View
+																				</a>
+																				
+																				<a href="javascript:void(0);" class="btn btn-sm bg-success-light">
+																					<i class="fas fa-check"></i> Accept
+																				</a>
+																				<a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
+																					<i class="fas fa-times"></i> Cancel
+																				</a>
+																			</div>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>
+																			<h2 class="table-avatar">
+																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5aBv0FCFETpEMzQ7DYv4AyE1ZCt5iJ2hZTFtjse8gpu5SgYqDJSiCkqydOTCl3vKHKMQ&usqp=CAU" alt="User Image"></a>
+																				<a href="patient-profile.html">Michelle Fairfax <span>#PT0004</span></a>
+																			</h2>
+																		</td>
+																		<td>28 Oct 2019 <span class="d-block text-info">6.00 PM</span></td>
+																		<td>General</td>
+																		<td>New Patient</td>
+																		<td class="text-center">$350</td>
+																		<td class="text-right">
+																			<div class="table-action">
+																				<a href="javascript:void(0);" class="btn btn-sm bg-info-light">
+																					<i class="far fa-eye"></i> View
+																				</a>
+																				
+																				<a href="javascript:void(0);" class="btn btn-sm bg-success-light">
+																					<i class="fas fa-check"></i> Accept
+																				</a>
+																				<a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
+																					<i class="fas fa-times"></i> Cancel
+																				</a>
+																			</div>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>
+																			<h2 class="table-avatar">
+																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbKOa2zpxSDnY8Ppx2A4ui6DSVJ_X3ZOZZ4Dsh49X0hAyCe3Zsnw61J_AX5NXG_4L2xNY&usqp=CAU" alt="User Image"></a>
+																				<a href="patient-profile.html">Gina Moore <span>#PT0005</span></a>
+																			</h2>
+																		</td>
+																		<td>27 Oct 2019 <span class="d-block text-info">8.00 AM</span></td>
+																		<td>General</td>
+																		<td>Old Patient</td>
+																		<td class="text-center">$250</td>
+																		<td class="text-right">
+																			<div class="table-action">
+																				<a href="javascript:void(0);" class="btn btn-sm bg-info-light">
+																					<i class="far fa-eye"></i> View
+																				</a>
+																				
+																				<a href="javascript:void(0);" class="btn btn-sm bg-success-light">
+																					<i class="fas fa-check"></i> Accept
+																				</a>
+																				<a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
+																					<i class="fas fa-times"></i> Cancel
+																				</a>
+																			</div>
+																		</td>
+																	</tr>
+																</tbody>
+															</table>		
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- /Upcoming Appointment Tab -->
+									   
+											<!-- Today Appointment Tab -->
+											<div class="tab-pane" id="today-appointments">
+												<div class="card card-table mb-0">
+													<div class="card-body">
+														<div class="table-responsive">
+															<table class="table table-hover table-center mb-0">
+																<thead>
+																	<tr>
+																		<th>Patient Name</th>
+																		<th>Appt Date</th>
+																		<th>Purpose</th>
+																		<th>Type</th>
+																		<th class="text-center">Paid Amount</th>
+																		<th></th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<tr>
+																		<td>
+																			<h2 class="table-avatar">
+																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="https://img.freepik.com/free-photo/afro-american-asisstant-monitoring-sick-woman-discussing-sickness-symptom_482257-19464.jpg" alt="User Image"></a>
+																				<a href="patient-profile.html">Elsie Gilley <span>#PT0006</span></a>
+																			</h2>
+																		</td>
+																		<td>14 Nov 2019 <span class="d-block text-info">6.00 PM</span></td>
+																		<td>Fever</td>
+																		<td>Old Patient</td>
+																		<td class="text-center">$300</td>
+																		<td class="text-right">
+																			<div class="table-action">
+																				<a href="javascript:void(0);" class="btn btn-sm bg-info-light">
+																					<i class="far fa-eye"></i> View
+																				</a>
+																				
+																				<a href="javascript:void(0);" class="btn btn-sm bg-success-light">
+																					<i class="fas fa-check"></i> Accept
+																				</a>
+																				<a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
+																					<i class="fas fa-times"></i> Cancel
+																				</a>
+																			</div>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>
+																			<h2 class="table-avatar">
+																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="https://c8.alamy.com/comp/E9MEB6/a-woman-lying-in-a-hospital-bed-E9MEB6.jpg" alt="User Image"></a>
+																				<a href="patient-profile.html">Joan Gardner <span>#PT0006</span></a>
+																			</h2>
+																		</td>
+																		<td>14 Nov 2019 <span class="d-block text-info">5.00 PM</span></td>
+																		<td>General</td>
+																		<td>Old Patient</td>
+																		<td class="text-center">$100</td>
+																		<td class="text-right">
+																			<div class="table-action">
+																				<a href="javascript:void(0);" class="btn btn-sm bg-info-light">
+																					<i class="far fa-eye"></i> View
+																				</a>
+																				
+																				<a href="javascript:void(0);" class="btn btn-sm bg-success-light">
+																					<i class="fas fa-check"></i> Accept
+																				</a>
+																				<a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
+																					<i class="fas fa-times"></i> Cancel
+																				</a>
+																			</div>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>
+																			<h2 class="table-avatar">
+																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="https://c8.alamy.com/comp/E9MEB6/a-woman-lying-in-a-hospital-bed-E9MEB6.jpg" alt="User Image"></a>
+																				<a href="patient-profile.html">Daniel Griffing <span>#PT0007</span></a>
+																			</h2>
+																		</td>
+																		<td>14 Nov 2019 <span class="d-block text-info">3.00 PM</span></td>
+																		<td>General</td>
+																		<td>New Patient</td>
+																		<td class="text-center">$75</td>
+																		<td class="text-right">
+																			<div class="table-action">
+																				<a href="javascript:void(0);" class="btn btn-sm bg-info-light">
+																					<i class="far fa-eye"></i> View
+																				</a>
+																				
+																				<a href="javascript:void(0);" class="btn btn-sm bg-success-light">
+																					<i class="fas fa-check"></i> Accept
+																				</a>
+																				<a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
+																					<i class="fas fa-times"></i> Cancel
+																				</a>
+																			</div>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>
+																			<h2 class="table-avatar">
+																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="https://c8.alamy.com/comp/E9MEB6/a-woman-lying-in-a-hospital-bed-E9MEB6.jpg" alt="User Image"></a>
+																				<a href="patient-profile.html">Walter Roberson <span>#PT0008</span></a>
+																			</h2>
+																		</td>
+																		<td>14 Nov 2019 <span class="d-block text-info">1.00 PM</span></td>
+																		<td>General</td>
+																		<td>Old Patient</td>
+																		<td class="text-center">$350</td>
+																		<td class="text-right">
+																			<div class="table-action">
+																				<a href="javascript:void(0);" class="btn btn-sm bg-info-light">
+																					<i class="far fa-eye"></i> View
+																				</a>
+																				
+																				<a href="javascript:void(0);" class="btn btn-sm bg-success-light">
+																					<i class="fas fa-check"></i> Accept
+																				</a>
+																				<a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
+																					<i class="fas fa-times"></i> Cancel
+																				</a>
+																			</div>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>
+																			<h2 class="table-avatar">
+																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="https://c8.alamy.com/comp/E9MEB6/a-woman-lying-in-a-hospital-bed-E9MEB6.jpg" alt="User Image"></a>
+																				<a href="patient-profile.html">Robert Rhodes <span>#PT0010</span></a>
+																			</h2>
+																		</td>
+																		<td>14 Nov 2019 <span class="d-block text-info">10.00 AM</span></td>
+																		<td>General</td>
+																		<td>New Patient</td>
+																		<td class="text-center">$175</td>
+																		<td class="text-right">
+																			<div class="table-action">
+																				<a href="javascript:void(0);" class="btn btn-sm bg-info-light">
+																					<i class="far fa-eye"></i> View
+																				</a>
+																				
+																				<a href="javascript:void(0);" class="btn btn-sm bg-success-light">
+																					<i class="fas fa-check"></i> Accept
+																				</a>
+																				<a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
+																					<i class="fas fa-times"></i> Cancel
+																				</a>
+																			</div>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>
+																			<h2 class="table-avatar">
+																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="https://c8.alamy.com/comp/E9MEB6/a-woman-lying-in-a-hospital-bed-E9MEB6.jpg" alt="User Image"></a>
+																				<a href="patient-profile.html">Harry Williams <span>#PT0011</span></a>
+																			</h2>
+																		</td>
+																		<td>14 Nov 2019 <span class="d-block text-info">11.00 AM</span></td>
+																		<td>General</td>
+																		<td>New Patient</td>
+																		<td class="text-center">$450</td>
+																		<td class="text-right">
+																			<div class="table-action">
+																				<a href="javascript:void(0);" class="btn btn-sm bg-info-light">
+																					<i class="far fa-eye"></i> View
+																				</a>
+																				
+																				<a href="javascript:void(0);" class="btn btn-sm bg-success-light">
+																					<i class="fas fa-check"></i> Accept
+																				</a>
+																				<a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
+																					<i class="fas fa-times"></i> Cancel
+																				</a>
+																			</div>
+																		</td>
+																	</tr>
+																</tbody>
+															</table>		
+														</div>	
+													</div>	
+												</div>	
+											</div>
+											<!-- /Today Appointment Tab -->
+											
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+
+			</div>		
+			<!-- /Page Content -->
+   
+			<!-- Footer -->
+			<footer class="footer">
+				
+				<!-- Footer Top -->
+				<div class="footer-top">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-lg-3 col-md-6">
+							
+								<!-- Footer Widget -->
+								<div class="footer-widget footer-about">
+									<div class="footer-logo">
+										<img src="data:image/png;base64,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" alt="logo">
+									</div>
+									<div class="footer-about-content">
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+										<div class="social-icon">
+											<ul>
+												<li>
+													<a href="#" target="_blank"><i class="fab fa-facebook-f"></i> </a>
+												</li>
+												<li>
+													<a href="#" target="_blank"><i class="fab fa-twitter"></i> </a>
+												</li>
+												<li>
+													<a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+												</li>
+												<li>
+													<a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+												</li>
+												<li>
+													<a href="#" target="_blank"><i class="fab fa-dribbble"></i> </a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<!-- /Footer Widget -->
+								
+							</div>
+							
+							<div class="col-lg-3 col-md-6">
+							
+								<!-- Footer Widget -->
+								<div class="footer-widget footer-menu">
+									<h2 class="footer-title">For Patients</h2>
+									<ul>
+										<li><a href="search.html"><i class="fas fa-angle-double-right"></i> Search for Doctors</a></li>
+										<li><a href="login.html"><i class="fas fa-angle-double-right"></i> Login</a></li>
+										<li><a href="register.html"><i class="fas fa-angle-double-right"></i> Register</a></li>
+										<li><a href="booking.html"><i class="fas fa-angle-double-right"></i> Booking</a></li>
+										<li><a href="patient-dashboard.html"><i class="fas fa-angle-double-right"></i> Patient Dashboard</a></li>
+									</ul>
+								</div>
+								<!-- /Footer Widget -->
+								
+							</div>
+							
+							<div class="col-lg-3 col-md-6">
+							
+								<!-- Footer Widget -->
+								<div class="footer-widget footer-menu">
+									<h2 class="footer-title">For Doctors</h2>
+									<ul>
+										<li><a href="appointments.html"><i class="fas fa-angle-double-right"></i> Appointments</a></li>
+										<li><a href="chat.html"><i class="fas fa-angle-double-right"></i> Chat</a></li>
+										<li><a href="login.html"><i class="fas fa-angle-double-right"></i> Login</a></li>
+										<li><a href="doctor-register.html"><i class="fas fa-angle-double-right"></i> Register</a></li>
+										<li><a href="doctor-dashboard.html"><i class="fas fa-angle-double-right"></i> Doctor Dashboard</a></li>
+									</ul>
+								</div>
+								<!-- /Footer Widget -->
+								
+							</div>
+							
+							<div class="col-lg-3 col-md-6">
+							
+								<!-- Footer Widget -->
+								<div class="footer-widget footer-contact">
+									<h2 class="footer-title">Contact Us</h2>
+									<div class="footer-contact-info">
+										<div class="footer-address">
+											<span><i class="fas fa-map-marker-alt"></i></span>
+											<p> 3556  Beech Street, San Francisco,<br> California, CA 94108 </p>
+										</div>
+										<p>
+											<i class="fas fa-phone-alt"></i>
+											+1 315 369 5943
+										</p>
+										<p class="mb-0">
+											<i class="fas fa-envelope"></i>
+											doccure@example.com
+										</p>
+									</div>
+								</div>
+								<!-- /Footer Widget -->
+								
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				<!-- /Footer Top -->
+				
+				<!-- Footer Bottom -->
+                <div class="footer-bottom">
+					<div class="container-fluid">
+					
+						<!-- Copyright -->
+						<div class="copyright">
+							<div class="row">
+								<div class="col-md-6 col-lg-6">
+									<div class="copyright-text">
+										<p class="mb-0"><a href="templateshub.net">Templates Hub</a></p>
+									</div>
+								</div>
+								<div class="col-md-6 col-lg-6">
+								
+									<!-- Copyright Menu -->
+									<div class="copyright-menu">
+										<ul class="policy-menu">
+											<li><a href="term-condition.html">Terms and Conditions</a></li>
+											<li><a href="privacy-policy.html">Policy</a></li>
+										</ul>
+									</div>
+									<!-- /Copyright Menu -->
+									
+								</div>
+							</div>
+						</div>
+						<!-- /Copyright -->
+						
+					</div>
+				</div>
+				<!-- /Footer Bottom -->
+				
+			</footer>
+			<!-- /Footer -->
+		   
+		</div>
+		<!-- /Main Wrapper -->
+	  
+		<!-- jQuery -->
+		<script src="assets/js/jquery.min.js"></script>
+		
+		<!-- Bootstrap Core JS -->
+		<script src="assets/js/popper.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		
+		<!-- Sticky Sidebar JS -->
+        <script src="assets/plugins/theia-sticky-sidebar/ResizeSensor.js"></script>
+        <script src="assets/plugins/theia-sticky-sidebar/theia-sticky-sidebar.js"></script>
+		
+		<!-- Circle Progress JS -->
+		<script src="assets/js/circle-progress.min.js"></script>
+		
+		<!-- Custom JS -->
+		<script src="assets/js/script.js"></script>
+		
+	</body>
+
+<!-- doccure/doctor-dashboard.html  30 Nov 2019 04:12:09 GMT -->
+</html>
